@@ -1,0 +1,186 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Light/Dark umumiy ranglar */
+body {
+  background: #121212;
+  color: #f5f5f5;
+  transition: 0.3s;
+}
+
+body.light {
+  background: #f5f5f5;
+  color: #121212;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+}
+
+header .dl {
+  font-size: 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+header .dl:hover {
+  transform: scale(1.2);
+}
+
+/* Contact section */
+.Contact {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+body.light .Contact {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Search box */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #2a2a2a;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+body.light .search {
+  background: #f0f0f0;
+}
+
+.search_inp {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 15px;
+}
+
+.search i {
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* Contact add section */
+.contact_plus {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 130px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contact_plus select,
+.contact_plus input,
+.contact_plus button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact_plus select,
+.contact_plus input {
+  background: #2a2a2a;
+  color: inherit;
+}
+
+body.light .contact_plus select,
+body.light .contact_plus input {
+  background: #f0f0f0;
+  color: #121212;
+}
+
+.contact_plus button {
+  background: #3a86ff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact_plus button:hover {
+  background: #2563eb;
+}
+
+/* Contact list (wrapper ichida) */
+.wrapper > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2a2a;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+body.light .wrapper > div {
+  background: #f0f0f0;
+}
+
+/* Left side (name + avatar) */
+.wrapper-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wrapper__left-image {
+  width: 40px;
+  height: 40px;
+  background: #3a86ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper__left-data h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wrapper__left-data p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Right side (icons) */
+.wrapper-right i {
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.wrapper-right i:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  color: #ff4d4d;
+}
