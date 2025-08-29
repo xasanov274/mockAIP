@@ -2,6 +2,40 @@ let wrapper = document.querySelector(".wrapper");
 let input = document.querySelector(".search_inp");
 let letterSelect = document.querySelector("#az");
 let toggleBtn = document.querySelector(".dl");
+let C_name = document.querySelector(".C_name");
+let P_nummer = document.querySelector(".P_nummer");
+let add = document.querySelector(".add");
+
+add.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (C_name.value !== "" && P_nummer.value !== "") {
+    fetch("https://68a83614bb882f2aa6ddcb4e.mockapi.io/users/users/", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name: C_name.value,
+        number: P_nummer.value,
+      }),
+    })
+    .then((res) => {
+      if (res.ok) {
+        alert("user successfully added")
+        wrapper.innerHTML = null;
+        GetData()
+        C_name.value = "";
+        P_nummer.value = "";
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      
+    })
+  } else {
+    alert("iltimos qaytadan urinib koring")
+  }
+});
 
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("light");
